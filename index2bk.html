@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0b090a;
+}
+
+.container {
+  max-width: 250px;
+  padding: 2px;
+  position: relative;
+  z-index:1;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); 
+  margin-right:25px;
+  filter: brightness(120%);
+}
+
+.container:before {
+  z-index:-1;
+  position: absolute;
+  content:"";
+  width:230px;
+  height:230px;
+  left:10px;
+  top:0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); 
+  filter: blur(20px);
+}
+
+.gradient {
+  background-color: #0b090a;
+  padding: 30px;
+  color: white; 
+  font-size: 35px;
+  font-family: arial;
+  text-align: center;
+}
+</style>
+<body>
+    
+    <div class="container">
+        <div class="gradient">
+      PURE CSS GLOWING GRADIENT BORDER
+        </div>  
+      </div>
+      
+
+</body>
+</html>
