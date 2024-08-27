@@ -31,19 +31,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: bisque;
+        background-color: gray;
         height: 100%;
         width: 100%;
         position: absolute;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
 
     .videoSimples
     {
-        position: absolute;
-        height: auto;
+        position: relative;
+        height: 100%;
         width: 100%;
-        overflow-y: hidden;
+        object-fit: cover;
         top:0;
         right: 0;
         z-index: 10;
@@ -52,8 +52,8 @@
 
     .containerB{
 
-        position: absolute;
-        top: 100%;
+        position: relative;
+        margin-top: 100vh;
         max-width: 100%;
     }
 
@@ -62,25 +62,33 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 42px;
-        z-index: 10;
+        z-index: 15;
     }
 
 </style>
 
 <body>
     
-    <div height="100px" width="100px" class="containerA">
-        <video autoplay muted loop id="myVideo" class="videoSimples">
-            <source src="rain.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-    </div>    
-    
-    <div class="medidas" id="medidas">
+    <div class="medidas" id="medidas" style="display: none;">
         <div>largura: <span id="spanLargura">x</span></div>
         <div>altura &nbsp;: <span id="spanAltura">y</span></div>
     </div>
 
+
+    <div class="containerA">
+        <video autoplay muted loop id="videoSimples" class="videoSimples">
+            <source src="rain.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>    
+
+    <div class="containerB">
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+        <p>A</p>
+    </div>
 
 </body>
 </html>
@@ -94,9 +102,18 @@
     })
 
     function updateMedidas(){
-        let estilo = getComputedStyle( document.getElementById("medidas") ).style
-        document.getElementById("spanAltura").innerHTML = estilo.height;
-        document.getElementById("spanLargura").innerHTML = estilo.width;  
+        
+        let altura, largura;
+        let estilo = getComputedStyle( document.getElementById("videoSimples") )
+        
+        document.getElementById("spanAltura").innerHTML = altura = estilo.height;
+        document.getElementById("spanLargura").innerHTML = largura = estilo.width;
+        
+        let videoSimples = document.getElementById("videoSimples");
+        let razaoVideo = 949.2/500.55;
+        let razaoTela = window.innerWidth/window.innerHeight;
+        
+
     }
 
 
