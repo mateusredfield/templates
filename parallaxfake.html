@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Size Parallax</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Seções de parallax */
+        .parallax {
+            position: relative;
+            height: 500px; /* Altura fixa do parallax */
+            width: 100%; /* Largura total */
+            background-attachment: fixed;
+        }
+
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra o contêiner sem esticar */
+            will-change: transform; /* Otimiza o desempenho do efeito de parallax */
+            z-index: 0; /* Garante que a imagem fique atrás do conteúdo */
+        }
+
+        #parallax2 img {
+            overflow-x: hidden;
+            object-fit: cover;
+            will-change: transform; /* Otimiza o desempenho do efeito de parallax */
+            z-index: 0; /* Garante que a imagem fique atrás do conteúdo */
+            overflow: hidden;
+        }
+
+        #parallax2{
+            position: relative;
+            height: 50%;
+            width: auto;
+            background-image: url(imgs/item2.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Conteúdo sobre as seções de parallax */
+        .content {
+            position: relative;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.6;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax" id="parallax1">
+        <img src="imgs/item1.jpg" alt="Parallax Image 1"/>
+    </div>
+    <div class="content">
+        <h1>Content Section</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis metus id euismod.</p>
+        <!-- Adicione mais conteúdo aqui -->
+    </div>
+    <div class="parallax" id="parallax2"></div>
+    <div class="content">
+        <h1>Content Section</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis metus id euismod.</p>
+        <!-- Adicione mais conteúdo aqui -->
+    </div>    
+</body>
+</html>
+
+<script>
+    document.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+
+    });
+</script>
