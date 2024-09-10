@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        :root{
+
+            --preto1: #000000;
+            --preto2: #0d0d0d;
+            --preto3: #1a1a1a;
+            --preto4: #262626;
+            --preto5: #333333;
+            --preto6: #404040;
+            --preto7: #4d4d4d;
+
+            --branco1: #ffffff;
+            --branco2: #717171;
+        }
+
+        html, body, * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            background-color: lightgray;
+            position: absolute;
+        }
+
+        .containerA {
+            position: absolute; /* Necessário para o contexto de empilhamento */
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            overflow: hidden;
+        }
+
+        .videoSimples {
+            position: absolute; /* Ajustado para absolute */
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 10; /* Z-index menor para o vídeo */
+            background-color: burlywood;
+        }
+
+        .telaSobreVideo {
+            position: absolute; /* Ajustado para absolute */
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 20; /* Z-index maior para sobrepor o vídeo */
+            background-color: #1a1a1a90;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .containerB {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            top: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            color: var(--branco1);
+            background-color: var(--preto2);
+        }
+
+        .containerC {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            top: 100%;
+            min-height: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            color: var(--branco1);
+            background-color: var(--preto4);
+            z-index: 10;
+        }
+
+        .containerC::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('imgs/item2.jpg');
+            background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed;
+            filter: blur(10px) brightness(50%); /* Aplica desfoque e escurecimento */
+            z-index: -10; /* Coloca o pseudo-elemento atrás do conteúdo principal */
+        }
+
+        .containerC .areaTitulo{
+
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-bottom: 1px solid var(--branco1);
+            min-width: 75%;
+            height: 7.5%;
+            min-height: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        .containerC .areaCardSkills {
+            width: 75%;
+            height: 92.5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            background-color: var(--preto2);
+            background-color: initial;
+        }
+
+        .areaCardSkills .cardSkillsA {
+
+            width: 30%;
+            height: 100%;
+            background-color: var(--preto7);
+            background-color: initial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .areaCardSkills .cardSkillsA .cardA{
+            width: 100%;
+            height: 75%;
+            background-color: var(--branco2);
+            border-radius: 10px;
+            color: var(--preto3);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            background-color: initial;
+            background-color: white;
+        }
+
+        .cardADivImg{
+            width: 100%;
+            height: 79%;
+        }
+
+        .cardADivImg .cardAImg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .cardATextos{
+            width: 100%;
+            height: 21%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex: row;
+        }
+
+        .cardATextos .datacao{
+            display: flex;
+            width: 30%;
+            height: 40%;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--preto5);
+            background-color: initial;
+        }
+
+        .cardATextos .datacao :first-child{
+            color: #cc0000;
+            font-size: 19px;
+        }
+
+        .cardATextos .datacao :nth-child(2){
+            font-size: 26px;
+        }
+
+        .cardATextos .textos{
+            display: flex;
+            width: 70%;
+            height: 40%;
+            justify-content: space-around;
+            align-items: start;
+            flex-direction: column;
+            background-color: initial;
+            background-color: white;
+        }
+
+        .cardATextos .textos :first-child{
+            font-size: 26px;
+        }
+
+        .areaCardSkills .cardSkillsB {
+
+            width: 60%;
+            height: 100%;
+            background-color: var(--preto7);
+            background-color: initial;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .areaCardSkills .cardSkillsB .fila1{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .areaCardSkills .cardSkillsB .fila2{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: row;
+        }
+
+        .areaCardSkills .cardSkillsB .cardB{
+            width: 50%;
+            height: 100%;
+            background-color: var(--branco2);
+            border-radius: 10px;
+            color: var(--preto3);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            background-color: initial;
+            background-color: white;
+        }
+
+        .areaCardSkills .cardSkillsB .cardB:first-child{
+            margin-left: -10%;
+        }
+
+        .cardBDivImg{
+            width: 100%;
+            height: 65%;
+        }
+
+        .cardBDivImg .cardBImg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .cardBTextos{
+            width: 100%;
+            height: 35%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex: row;
+        }
+
+        .cardBTextos .datacao{
+            display: flex;
+            width: 30%;
+            height: 40%;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--preto5);
+            background-color: initial;
+        }
+
+        .cardBTextos .datacao :first-child{
+            color: #cc0000;
+            font-size: 19px;
+        }
+
+        .cardBTextos .datacao :nth-child(2){
+            font-size: 26px;
+        }
+
+        .cardBTextos .textos{
+            display: flex;
+            width: 70%;
+            height: 40%;
+            justify-content: space-around;
+            align-items: start;
+            flex-direction: column;
+            background-color: initial;
+            background-color: white;
+        }
+
+        .cardBTextos .textos :first-child{
+            font-size: 26px;
+        }
+
+
+        .medidas {
+            position: fixed;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 42px;
+            z-index: 15;
+        }
+
+        .containerD {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            top: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            color: var(--branco1);
+            background-color: var(--preto2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="medidas" id="medidas" style="display: none;">
+        <div>largura: <span id="spanLargura">x</span></div>
+        <div>altura &nbsp;: <span id="spanAltura">y</span></div>
+    </div>
+
+    <div class="containerA">
+        <video autoplay muted loop id="videoSimples" class="videoSimples">
+            <source src="rain.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="telaSobreVideo">
+            IT'S RAINING AS MUCH AS I AM TRYING
+        </div>
+    </div>    
+
+    <div id="containerB" class="containerB">
+        <p onclick='mudaCorFundo("containerB", event)'>#3c3c3c</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#5f5f5f</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#848484</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#ababab</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#d4d4d4</p>
+        <p>Paleta 2</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#3e3e3e</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#272727</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#1e1e1e</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#131313</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#000000</p>
+        <p>Paleta 3</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#000000</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#0d0d0d</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#1a1a1a</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#262626</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#333333</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#404040</p>
+        <p onclick='mudaCorFundo("containerB", event)'>#4d4d4d</p>
+    </div>
+
+    <div id="containerC" class="containerC">
+        <div class="areaTitulo">DEV SKILLS</div>
+        <div class="areaCardSkills">
+            <div class="cardSkillsA">
+                <div class="cardA"> 
+                    <div class="cardADivImg">
+                        <img class="cardAImg" src="imgs/item1.jpg">
+                    </div>
+                    <div class="cardATextos">
+                        <div class="datacao">
+                            <span>nov</span><span>10</span>
+                        </div>
+                        <div class="textos">
+                            <span>Lorem Ipsum</span><span>Lorem ipsum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSkillsB">
+                <div class="fila1">
+                    <div class="cardB"> 
+                        <div class="cardBDivImg">
+                            <img class="cardBImg" src="imgs/item2.jpg">
+                        </div>
+                        <div class="cardBTextos">
+                            <div class="datacao">
+                                <span>nov</span><span>10</span>
+                            </div>
+                            <div class="textos">
+                                <span>Lorem Ipsum</span><span>Lorem ipsum</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardB"> 
+                        <div class="cardBDivImg">
+                            <img class="cardBImg" src="imgs/item3.jpg">
+                        </div>
+                        <div class="cardBTextos">
+                            <div class="datacao">
+                                <span>nov</span><span>10</span>
+                            </div>
+                            <div class="textos">
+                                <span>Lorem Ipsum</span><span>Lorem ipsum</span>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="fila2">
+                    <div class="cardB"> 
+                        <div class="cardBDivImg">
+                            <img class="cardBImg" src="imgs/item4.jpg">
+                        </div>
+                        <div class="cardBTextos">
+                            <div class="datacao">
+                                <span>nov</span><span>10</span>
+                            </div>
+                            <div class="textos">
+                                <span>Lorem Ipsum</span><span>Lorem ipsum</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardB"> 
+                        <div class="cardBDivImg">
+                            <img class="cardBImg" src="imgs/item5.jpg">
+                        </div>
+                        <div class="cardBTextos">
+                            <div class="datacao">
+                                <span>nov</span><span>10</span>
+                            </div>
+                            <div class="textos">
+                                <span>Lorem Ipsum</span><span>Lorem ipsum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="containerD" class="containerD">
+        <p onclick='mudaCorFundo("containerD", event)'>#3c3c3c</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#5f5f5f</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#848484</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#ababab</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#d4d4d4</p>
+        <p>Paleta 2</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#3e3e3e</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#272727</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#1e1e1e</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#131313</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#000000</p>
+        <p>Paleta 3</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#000000</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#0d0d0d</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#1a1a1a</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#262626</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#333333</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#404040</p>
+        <p onclick='mudaCorFundo("containerD", event)'>#4d4d4d</p>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function mudaCorFundo( id = "", e ){
+        
+        let container = document.getElementById(id);
+        if ( !container ) return;
+
+        container.style.backgroundColor = e.currentTarget.innerHTML;
+    }
+</script>
