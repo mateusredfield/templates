@@ -337,13 +337,102 @@
             max-width: 100%;
             top: 100%;
             min-height: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            overflow: hidden;
+            color: var(--branco1);
+            background-color: var(--preto2);
+            z-index: 10;
+        }
+
+        .containerD::before {
+            content: "";
+            position: absolute;
+            top: 15%;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background-image: url('imgs/item1.jpg');
+            background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed;
+            filter: blur(10px) brightness(50%); /* Aplica desfoque e escurecimento */
+            z-index: -10; /* Coloca o pseudo-elemento atrás do conteúdo principal */
+        }
+
+        .containerD .bloco1{
+            position: relative;
+            right: 10%;
+            border: 1px solid white;
+            height: 40%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .containerD .bloco1 .texto{
+            font-weight: 700;
+            font-size: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .containerD .bloco1 .cards{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            height: 80%;
+            border: 1px solid white;
+        }
+
+        .containerD .bloco1 .cards .fila{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
-            color: var(--branco1);
-            background-color: var(--preto2);
+            height: 100%;
+            width: 50%;
+        }
+
+        .containerD .bloco1 .card{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .containerD .bloco1 .card::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--preto4);
+            filter: opacity(50%);
+        }
+
+        .containerD .bloco1 .card .texto{
+            font-size: 16px;
+            filter: opacity(100%);
+        }
+
+        .containerD .bloco2{
+            margin-left: 0%;
+            border: 1px solid white;
         }
 
     </style>
@@ -466,25 +555,20 @@
     </div>
 
     <div id="containerD" class="containerD">
-        <p onclick='mudaCorFundo("containerD", event)'>#3c3c3c</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#5f5f5f</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#848484</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#ababab</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#d4d4d4</p>
-        <p>Paleta 2</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#3e3e3e</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#272727</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#1e1e1e</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#131313</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#000000</p>
-        <p>Paleta 3</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#000000</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#0d0d0d</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#1a1a1a</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#262626</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#333333</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#404040</p>
-        <p onclick='mudaCorFundo("containerD", event)'>#4d4d4d</p>
+        <div class="bloco1">
+            <div class="texto">Lorem Ipsum Lorem Ipsum Lorem Ipsum</div>
+            <div class="cards">
+                <div class="fila">
+                    <div class="card"><span class="texto">40 commits</span></div>
+                    <div class="card"><span class="texto">15 projetos</span></div>
+                </div>
+                <div class="fila">
+                    <div class="card"><span class="texto">HTML, CSS, javascript, react, C#, SQL</span></div>
+                    <div class="card"><span class="texto">Full-Stack Developer Mid-Level</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="bloco2">bloco2</div>
     </div>
 
 
