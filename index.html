@@ -110,13 +110,13 @@
             top: 20%;
             left: 0;
             width: 100%;
-            height: 65%;
+            height: 70%;
             background-image: url('imgs/item2.jpg');
             background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
             background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat; /* Impede a repetição da imagem */
             background-attachment: fixed;
-            filter: brightness(70%); /* Aplica desfoque e escurecimento */
+            filter: brightness(79%); /* Aplica desfoque e escurecimento */
             z-index: -10; /* Coloca o pseudo-elemento atrás do conteúdo principal */
         }
 
@@ -135,7 +135,7 @@
 
         .containerC .areaCardSkills {
             width: 75%;
-            height: 100%;
+            height: 92.5%;
             display: flex;
             justify-content: space-between;
             align-items: start;
@@ -157,7 +157,7 @@
 
         .areaCardSkills .cardSkillsA .cardA{
             width: 100%;
-            height: 40%;
+            height: 50%;
             background-color: var(--branco2);
             border-radius: 10px;
             color: var(--preto3);
@@ -227,38 +227,38 @@
         .areaCardSkills .cardSkillsB {
 
             position: relative;
-            top: 16.25%;
             width: 60%;
-            height: 65%;
+            height: 100%;
             background-color: var(--preto7);
             background-color: initial;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
             flex-direction: column;
         }
 
         .areaCardSkills .cardSkillsB .fila1{
             width: 100%;
-            height: 40%;
+            height: 25%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
             flex-direction: row;
         }
 
         .areaCardSkills .cardSkillsB .fila2{
             width: 100%;
-            height: 40%;
+            height: 25%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
             flex: row;
         }
 
         .areaCardSkills .cardSkillsB .cardB{
-            width: 50%;
-            height: 100%;
+            width: 45%;
+            height: 90%;
+            min-height: 135px;
             background-color: var(--branco2);
             border-radius: 10px;
             color: var(--preto3);
@@ -307,11 +307,11 @@
 
         .cardBTextos .datacao :first-child{
             color: #cc0000;
-            font-size: 19px;
+            font-size: 14px;
         }
 
         .cardBTextos .datacao :nth-child(2){
-            font-size: 26px;
+            font-size: 19px;
         }
 
         .cardBTextos .textos{
@@ -326,7 +326,7 @@
         }
 
         .cardBTextos .textos :first-child{
-            font-size: 26px;
+            font-size: 19px;
         }
 
 
@@ -495,103 +495,6 @@
             background-attachment: fixed;
         }
 
-        .containerB::before {
-            content: "";
-            position: absolute;
-            top: 12.25%;
-            left: 0;
-            width: 100%;
-            height: 65%;
-            background-image: url('imgs/item37.jpg');
-            background-size: cover; /* Ajusta a imagem para cobrir a área inteira */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Impede a repetição da imagem */
-            background-attachment: fixed;
-            filter: brightness(70%); /* Aplica desfoque e escurecimento */
-            z-index: -10; /* Coloca o pseudo-elemento atrás do conteúdo principal */
-        }
-
-        .containerB .bloco1{
-            position: relative;
-            left: 0%;
-            border: 1px solid white;
-            border: 0px;
-            height: 40%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .containerB .bloco1 .texto,
-        .containerB .bloco2 .texto{
-            position: relative;
-            left: 2.5%;
-            font-weight: 700;
-            font-size: 26px;
-            font-family: Arial, Helvetica, sans-serif;
-            height: 10%;
-            width: 100%;
-            display: flex;
-            justify-content: start;
-            align-items: start;
-        }
-
-        .containerB .bloco1 .cards,
-        .containerB .bloco2 .cards{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: row;
-            height: 80%;
-            border: 1px solid white;
-            border: 0px;
-        }
-
-        .containerB .bloco1 .cards .fila,
-        .containerB .bloco2 .cards .fila{
-            position: relative;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-            height: 100%;
-            width: 40%;
-        }
-
-        .containerB .bloco1 .card,
-        .containerB .bloco2 .card{
-            width: 100%;
-            height: 40%;
-            padding: 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            font-weight: 700;
-            text-align: center;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .containerB .bloco1 .card .texto,
-        .containerB .bloco2 .card .texto{
-            font-size: 16px;
-            filter: opacity(100%);
-        }
-
-        .containerB .bloco2{
-            position: relative;
-            height: 40%;
-            width: 40%;
-            right: -2.5%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: stretch;
-            flex-direction: column;
-            border: 1px solid white;
-            border: 0px;
-        }
-
         .video-container {
             position: relative;
             height: 0;
@@ -659,9 +562,6 @@
             </div>
         </div>
         <div class="bloco2" style="display: none;">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/QHIyFIMu4uQ" title="Som relaxante de chuva no quarto escuro (sem anúncios) - Sons de chuva para dormir, estudar, meditar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
         </div>
     </div>
 
