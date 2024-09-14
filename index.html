@@ -26,6 +26,12 @@
             margin: 0;
         }
 
+        html, body{
+            scroll-snap-type: y proximity;
+            scroll-behavior: smooth;
+            scroll-snap-stop:  normal;
+        }
+
         body {
             min-height: 100vh;
             height: 100vh;
@@ -40,6 +46,7 @@
             height: 100%;
             background-color: gray;
             overflow: hidden;
+            scroll-snap-align: start;
         }
 
         .videoSimples {
@@ -102,6 +109,7 @@
             background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat; /* Impede a repetição da imagem */
             background-attachment: fixed;
+            scroll-snap-align: start;
         }
 
         .containerC::before {
@@ -358,6 +366,7 @@
             background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat; /* Impede a repetição da imagem */
             background-attachment: fixed;
+            scroll-snap-align: start;
         }
 
         .containerD::before {
@@ -493,6 +502,7 @@
             background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat; /* Impede a repetição da imagem */
             background-attachment: fixed;
+            scroll-snap-align: start;
         }
 
         .video-container {
