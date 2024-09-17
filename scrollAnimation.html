@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>Document</title>
+</head>
+
+<style>
+
+    :root{
+
+        --preto1: #000000;
+        --preto2: #0d0d0d;
+        --preto3: #1a1a1a;
+        --preto4: #262626;
+        --preto5: #333333;
+        --preto6: #404040;
+        --preto7: #4d4d4d;
+
+        --branco1: #ffffff;
+        --branco2: #717171;
+    }
+
+    body, html, *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body, html {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--preto4);
+    }
+
+    .container{
+        height: 100%;
+        width: 100%;
+        background-color: var(--preto5);
+        border: 1px solid var(--preto3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        font-weight: 700;
+        font-family: 'Poppins', Helvetica, sans-serif;
+        color: var(--branco1);
+    }
+
+    .hidden{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    @media(prefers-reduced-motion){
+        .hidden{
+            transition: none;
+        }
+    }
+
+</style>
+
+<body>
+    
+    <div class="container"><p class="hidden">Simple Text Example</p></div>
+    <div class="container"><p class="hidden">Simple Text Example</p></div>
+    <div class="container"></div>
+    <div class="container"></div>
+
+</body>
+</html>
+
+<script>
+
+    const observer = new IntersectionObserver( (interceptados) => {
+        interceptados.forEach((interceptado) => {
+            interceptado.isIntersecting ? interceptado.target.classList.add('show') : interceptado.target.classList.remove('show');
+        })
+    })
+
+    document.querySelectorAll('.hidden').forEach((el => observer.observe(el)))
+
+</script>
