@@ -79,8 +79,44 @@
             background-color: #1a1a1a90;
             color: white;
             display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .containerA .menuNav{
+            width: 100%;
+            display: flex;
+            background-color: #ffffff30;
+        }
+
+        .containerA .textoA{
+            position: relative;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
+            background-color: #ffffff33;
+            background-color: unset;
+            width: 60%;
+            height: 40vh;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 10%;
+        }
+
+        .containerA .textoA span:first-child{
+            font-size: 14px;
+        }
+
+        .containerA .textoA span:nth-child(2){
+            font-size: 42px;
+            padding-top: 15px;
+        }
+
+        .containerA .textoA span:nth-child(3){
+            font-size: 22px;
+            font-weight: 400;
+            padding-top: 15px;
         }
 
         .containerB {
@@ -634,7 +670,12 @@
             Your browser does not support HTML5 video.
         </video>
         <div class="telaSobreVideo">
-            <p class="areaTitulo hidden">It's Rainning as much as I am Coding</p>
+            <p class="areaTitulo menuNav">Menu Inicial</p>
+            <p class="areaTitulo hidden textoA">
+                <span>Rainning and Coding</span>
+                <span>My Portifolio, by mateusredfield</span>
+                <span>This portilio is based on how much times we try to do something and at the end it looks like each of our tries were just a drop of water in the middle of the rain</span>
+            </p>
         </div>
     </div>    
 
